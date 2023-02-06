@@ -6,6 +6,7 @@
     app:contentPadding="10dp"
     android:layout_margin="5dp"
     android:id="@+id/cardview"
+
     >
 
     <RelativeLayout
@@ -21,7 +22,7 @@
 
             <TextView
                 android:id="@+id/note"
-                android:textSize="18sp"
+                android:textSize="17sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Note"
@@ -31,7 +32,7 @@
 
             <TextView
                 android:id="@+id/category"
-                android:textSize="18sp"
+                android:textSize="17sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Category"
@@ -42,7 +43,7 @@
 
             <TextView
                 android:id="@+id/type"
-                android:textSize="18sp"
+                android:textSize="17sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Expense Type"
