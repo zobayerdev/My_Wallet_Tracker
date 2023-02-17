@@ -78,14 +78,14 @@ public class DeveloperActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                  //  Intent appIntent = new Intent(Intent.ACTION_VIEW);
-                    Intent webIntent = new Intent(Intent.ACTION_VIEW,
-                            Uri.parse("https://www.youtube.com/@trodev"));
-                    try {
-                        startActivity(webIntent);
-                    } catch (ActivityNotFoundException ex) {
-                        startActivity(webIntent);
-                    }
+                //  Intent appIntent = new Intent(Intent.ACTION_VIEW);
+                Intent webIntent = new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("https://www.youtube.com/@trodev"));
+                try {
+                    startActivity(webIntent);
+                } catch (ActivityNotFoundException ex) {
+                    startActivity(webIntent);
+                }
             }
         });
 

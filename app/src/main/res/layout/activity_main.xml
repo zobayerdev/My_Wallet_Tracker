@@ -13,62 +13,61 @@
         android:orientation="vertical"
 
         >
+
         <androidx.cardview.widget.CardView
-            android:layout_margin="5dp"
             android:layout_width="match_parent"
-            android:layout_height="300dp">
+            android:layout_height="300dp"
+            android:layout_margin="5dp">
 
             <com.github.mikephil.charting.charts.PieChart
                 android:id="@+id/pieChart"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent" />
 
         </androidx.cardview.widget.CardView>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler"
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="240dp"
-            />
+            android:layout_marginTop="10dp" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/buttonGroup"
-        android:weightSum="2"
-        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        >
+        android:layout_alignParentBottom="true"
+        android:weightSum="2">
 
         <TextView
             android:id="@+id/addIncome"
-            android:layout_margin="5dp"
-            android:background="@color/black"
-            android:gravity="center"
-            android:fontFamily="@font/ubuntu_medium"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:text="Add Income"
-            android:layout_weight="1"
-            android:padding="15dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@color/black"
+            android:fontFamily="@font/ubuntu_medium"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="Add Income"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/addExpense"
-            android:layout_margin="5dp"
-            android:background="@color/black"
-            android:gravity="center"
-            android:fontFamily="@font/ubuntu_medium"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:text="Add Expense"
-            android:layout_weight="1"
-            android:padding="15dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@color/black"
+            android:fontFamily="@font/ubuntu_medium"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="Add Expense"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
 
     </LinearLayout>
 

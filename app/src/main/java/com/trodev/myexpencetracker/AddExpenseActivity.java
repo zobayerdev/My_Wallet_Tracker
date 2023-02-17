@@ -99,8 +99,8 @@ public class AddExpenseActivity extends AppCompatActivity {
             }
             return true;
         }
-        if(id == R.id.developer){
-            startActivity(new Intent(AddExpenseActivity.this,DeveloperActivity.class));
+        if (id == R.id.developer) {
+            startActivity(new Intent(AddExpenseActivity.this, DeveloperActivity.class));
         }
         if (id == R.id.deleteExpense) {
             deleteExpense();

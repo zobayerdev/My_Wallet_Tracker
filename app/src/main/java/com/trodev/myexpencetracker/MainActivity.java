@@ -26,13 +26,13 @@ import com.trodev.myexpencetracker.databinding.ActivityMainBinding;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements OnItemsClick{
+public class MainActivity extends AppCompatActivity implements OnItemsClick {
 
     ActivityMainBinding binding;
     private ExpensesAdapter expensesAdapter;
     Intent intent;
 
-    private long income =0 , expense = 0;
+    private long income = 0, expense = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,10 +43,9 @@ public class MainActivity extends AppCompatActivity implements OnItemsClick{
 
         intent = new Intent(MainActivity.this, AddExpenseActivity.class);
 
-        expensesAdapter = new ExpensesAdapter(this,this);
+        expensesAdapter = new ExpensesAdapter(this, this);
         binding.recycler.setAdapter(expensesAdapter);
         binding.recycler.setLayoutManager(new LinearLayoutManager(this));
-
 
 
         binding.addIncome.setOnClickListener(new View.OnClickListener() {
@@ -121,13 +120,11 @@ public class MainActivity extends AppCompatActivity implements OnItemsClick{
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                         expensesAdapter.clear();
                         List<DocumentSnapshot> dsList = queryDocumentSnapshots.getDocuments();
-                        for(DocumentSnapshot ds: dsList )
-                        {
+                        for (DocumentSnapshot ds : dsList) {
                             ExpenseModel expenseModel = ds.toObject(ExpenseModel.class);
-                            if(expenseModel.getType().equals("Income")){
+                            if (expenseModel.getType().equals("Income")) {
                                 income += expenseModel.getAmount();
-                            }
-                            else {
+                            } else {
                                 expense += expenseModel.getAmount();
                             }
                             expensesAdapter.add(expenseModel);
@@ -141,18 +138,17 @@ public class MainActivity extends AppCompatActivity implements OnItemsClick{
     private void setUpGraph() {
         List<PieEntry> pieEntryList = new ArrayList<>();
         List<Integer> colorsList = new ArrayList<>();
-        if(income!=0)
-        {
-            pieEntryList.add(new PieEntry(income,"Income"));
+        if (income != 0) {
+            pieEntryList.add(new PieEntry(income, "Income"));
             colorsList.add(getResources().getColor(R.color.green));
         }
 
-        if(expense!=0) {
-            pieEntryList.add(new PieEntry(expense,"Expense"));
+        if (expense != 0) {
+            pieEntryList.add(new PieEntry(expense, "Expense"));
             colorsList.add(getResources().getColor(R.color.red));
         }
 
-        PieDataSet pieDataSet = new PieDataSet(pieEntryList,String.valueOf(income-expense));
+        PieDataSet pieDataSet = new PieDataSet(pieEntryList, String.valueOf(income - expense));
         PieData pieData = new PieData(pieDataSet);
         pieDataSet.setColors(colorsList);
 
@@ -162,7 +158,7 @@ public class MainActivity extends AppCompatActivity implements OnItemsClick{
 
     @Override
     public void onClick(ExpenseModel expenseModel) {
-        intent.putExtra("model",expenseModel);
+        intent.putExtra("model", expenseModel);
         startActivity(intent);
     }
 }
